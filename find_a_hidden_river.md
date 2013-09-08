@@ -10,6 +10,8 @@
 3. Speaker of FOSS4G, title is "SVGMap - Tilemap without Javascript"
 
 ![smellman](./images/smellman.jpg)
+![smellman2](./images/smellman_2.jpg)
+
 
 ---
 # my company
@@ -69,7 +71,7 @@ If this river exist, like this:
 # What is this data?
 The river name is "渋谷川暗渠"(Shibuyagawa-Ankyo).
 
-Shibuyagawa is mean "Shibuya river", what is Ankyo?
+Shibuyagawa is mean "Shibuya river", what is "Ankyo"?
 
 ---
 # Ankyo
@@ -83,7 +85,7 @@ I don't know about Ankyo until searching in Google:-(
 
 I found that:
 
-> Shibuya river is covered with concrete when Tokyo Olympics in 1964.
+> Too many parts of Shibuya river are covered with concrete by redevelopment at Tokyo Olympics in 1964.
 
 We need to research using a map before 1960s.
 
@@ -151,7 +153,7 @@ Survey with old map is fun.
 
 End of shibuyagawa equals Start of 玉川上水(Tamagawa Jousui).
 
-
+![result2](./images/result_2.jpg)
 
 ---
 # Thanks for listening!
