@@ -25,16 +25,16 @@
 
 ## Community
 
-- Member of Mozilla Community in Japan. Author of two japanese books about Firefox (Firefox 3 Hacks, Firefox Hacks Rebooted)
-- Member of Japan Unix Society.
-- OpenStreetMap mapper.
+- Member of Mozilla Community in Japan. Author of two Japanese books about Firefox (Firefox 3 Hacks, Firefox Hacks Rebooted)
+- Member of Japan Unix Society
+- OpenStreetMap mapper
 
 ---
 
 ## Georepublic
-- [pgRouting](http://pgrouting.org/)
+- [pgRouting](http://pgrouting.org/) Project
 - [Geofuse](http://geofuse.georepublic.net/geofuse/) and [Geothematics](http://beta.geothematics.com/)
-- Supports OpenStreetMap and others
+- Support of FOSS4G, OpenStreetMap and others
 
 ---
 
@@ -46,9 +46,9 @@ I enjoy Maptember too much!
 ---
 
 ## Notice...
-This presentation describe some *proposals* to W3C.
+This presentation describes some *proposals* to W3C.
 
-Be careful about they are not any *standards*.
+Be careful about it! They are not *standards* yet.
 
 ---
 
@@ -58,26 +58,26 @@ Be careful about they are not any *standards*.
 
 
 ## Current Tile Maps
-Current Tile Maps on Web are implemented by Javascript.
+Current Tile Maps on the Web are implemented using Javascript.
 
 - Google Maps
-- leaflet.js
+- Leaflet.js
 - OpenLayers
 - others
 
 ---
 
-## Problem in Javascript
-Implementation with Javascript has some problem.
+## Problems with Javascript
+Implementations with Javascript have some problems.
 
-- different between javascript engines
-- mobile implementation
-- big javascript file
+- Difference between Javascript engines
+- Mobile implementation
+- Big Javascript files
 
 ---
 
-## javascript engines
-Sometimes programmer fails javascript hell with small different between each engine:-(
+## Javascript Engines
+Sometimes Javascript programmers need to fight with small differences between each engine :-(
 
 - OdinMonkey (Firefox)
 - v8 (Blink or Google Chrome)
@@ -88,7 +88,7 @@ Goodbye *Opera*.
 
 ---
 
-## mobile implementation
+## Mobile Implementations
 Mobile devices don't have powerful CPU.
 
 ---
@@ -105,7 +105,7 @@ But *too many* mobile devices don't have powerful CPU.
 
 ---
 
-iOS doesn't support JIT in application(UIWebView).
+iOS doesn't support JIT in applications (UIWebView).
 
 Only Mobile Safari supports JIT.
 
@@ -117,11 +117,11 @@ Only Mobile Safari supports JIT.
 - openlayers.min.js > 300kb. (but openlayers.mobile.js is small)
 - leaflet.js < 100kb :-)
 
-It's nothing compared to loading map data, but sometimes loading big javascript file cause memory leak.
+It's nothing compared to loading map data, but sometimes loading big Javascript files cause memory leaks.
 
 ---
 
-Tile Maps with Javascript has problems but *time is a cure* that.
+Tile Maps with Javascript has problems but *time heals all wounds*.
 
 However we can try *another approach*.
 
@@ -131,67 +131,68 @@ However we can try *another approach*.
 
 ---
 
-SVG Map is a technology implementation Tile Map using SVG.
+SVG Map is a technology implementation for Tile Maps using SVG.
 
-Too many specs are developed by Satoru Takagi in KDDI(famous mobile carrier in Japan).
+Lots of specifications have been developed by Satoru Takagi, who is working for KDDI (a famous mobile carrier in Japan).
 
 ---
 
-## history
-SVG Map has too long history.
+## History
+SVG Map has a long history.
 
-KDDI took some parent about basic technology of Tile Map in 1996.
-
-They focused research and development that called "JaMaPS" before upcoming SVG technology.
-
-They started standard activity at W3C SVG WG in 2000.
+- The basic technology of Tile Map goes back to 1996, developed by KDDI.
+- They focused on research and development of what was named "JaMaPS", already before SVG technology came up.
+- They started Standardization activity at W3C SVG Working Group in 2000.
 
 ---
 
 ## W3C SVG 1.1
 
-SVG 1.1 includes some result of their acitivity.
+SVG 1.1 includes some results of their acitivity.
 
-- Geographic coordinate systems ([http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates](http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates))
+- Geographic coordinate systems: [http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates](http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates)
 
 ---
 
 ## SVG Tiny 1.2
 
-They make "Tiling and Layering Module for SVG 1.2 Tiny" spec and posted "W3C Member Submission".
+They developed the "Tiling and Layering Module for SVG 1.2 Tiny" specification and submitted it as "W3C Member Submission".
 
-- Tiling and Layering Module for SVG 1.2 Tiny ([http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/](http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/))
+- Tiling and Layering Module for SVG 1.2 Tiny: [http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/](http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/)
 
 ---
 
 ## SVGTL
 
-This module use *animation* tag but it's not useful.
+This module uses an *animation* tag, but it's not useful.
 
-So they make new proposals now.
+So they now work on some new proposals.
 
 ---
 
-## new proposals
+## New Proposals
 
-They separated from Tiling and Layering Module to two proposal and they use *iframe* tag instead of *animation* tag.
+The Tiling and Layering Module was seperated from one into two proposals, and it now uses *iframe* tag instead of *animation* tag.
 
-- IFrame Like Syntax([http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame\_Like\_Syntax](http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame_Like_Syntax))
-- Global Coordinate System([http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global\_Coordinate\_Systems](http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global_Coordinate_Systems))
+- IFrame Like Syntax: [http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame\_Like\_Syntax](http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame_Like_Syntax)
+- Global Coordinate System: [http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global\_Coordinate\_Systems](http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global_Coordinate_Systems)
 
-Basic concept is largely similar to SVG 1.2 Tiny version.
+The basic concept is in large parts similar to the SVG 1.2 Tiny version.
 
 ---
 
 ## IFrame Like Syntax
 
-IFrame Like Syntax supports *Tiling* function and *Layering* function.
+IFrame Like Syntax supports 
+
+- *Tiling* function and 
+- *Layering* function.
 
 ---
 
 ## Tiling
 
-Root SVG Document puts tiled SVG Documents with iframe and each SVG Documents also put tiled SVG Documents(cascading documents).
+A Root SVG Document contains tiled SVG Documents with IFrame, and each tiled SVG Document also contains tiled SVG Documents again, and so on ... (cascading documents).
 
 ![tiling](./images/700px-PIFLS_tiling.png)
 
@@ -199,17 +200,17 @@ Root SVG Document puts tiled SVG Documents with iframe and each SVG Documents al
 
 ## Layering
 
-Put layer of SVG document, it is depending to display on viewbox and zooming.
+The contained layers of each SVG document are displayed depending on viewbox and zoom level.
 
 ![layering](./images/550px-PIFLS_layering.png)
 
-Zooming function using extend CSS3 Media Query defined in this proposal.
+The zooming function uses an extended CSS3 Media Query, defined in this proposal.
 
 ---
 
 ## Tiling and Layering example
 
-root.svg
+Root.svg
 
 	&lt;iframe x="0" y="0" width="200" height="200"
 	        media="(min-zoom: 0.5) and (max-zoom: 5)"
@@ -218,11 +219,11 @@ root.svg
 	        media="(min-zoom: 5) and (max-zoom: 15)"
 	        src="L2.svg" /&gt;
 
-Zooming function work with extended CSS3 Media Queries.
+The zooming function work with extended CSS3 Media Queries.
 
-This example will display either L1.svg or L2.svg via zoom level.
+This example will display either L1.svg or L2.svg depending on zoom level.
 
-When media is not decleard, this layer will be displayed at all times.
+When no media attribute is declared, this layer will be always shown.
 
 ---
 
@@ -241,7 +242,7 @@ L1_01.svg
 
 	&lt;image xlink:href="L1_01.png" /&gt;
 
-L1.svg contains 4 iframes sorted tiled.
+L1.svg contains 4 IFrames, tiled and ordered.
 
 ---
 
@@ -293,9 +294,9 @@ Layer 2 contains 4 times 4 (= 16) SVG Documents.
 
 ## Dynamic Loading
 
-Browser will dicide loading documents with CSS3 Media Queries and view-port.
+The browser will decide, which documents to load with CSS3 Media Queries and view-port.
 
-Loaded Document will cached in browser.
+A loaded document will be cached in the browser.
 
 ![tile](./images/tile.gif)
 
@@ -303,13 +304,13 @@ Loaded Document will cached in browser.
 
 ## Global Coordinate System
 
-SVG provides function to geographic coodinates.
+SVG provides support for geographic coordinates.
 
-However, we need to simplify a implementation to specific geographic coordinate system.
+However, we need to simplify an implementation to a specific geographic coordinate system.
 
 ---
 
-*Global Coordinate System* provides a function to share a coodinate system by declearing a common coordinate system between plural documents.
+*Global Coordinate System* provides a function to share a coordinate system by declearing a common coordinate system between plural documents.
 
 ![globalcoordinatesystem](./images/globalcoordinatesystem1.jpg)
 
@@ -323,19 +324,19 @@ However, we need to simplify a implementation to specific geographic coordinate 
 
 ---
 
-## attributes
+## Attributes
 
-- href="<URL for Global Coordinate System>"
+- href="&lt;URL for Global Coordinate System&gt;"
 
-This attribute specifies the global coordinates system of the SVG document. That is, this is an identifier for a coordinate system. 
+This attribute specifies the global coordinates system of the SVG document. Therefor it is an identifier for a coordinate system. 
 
-- transform = "<transform-list>" | "none"
+- transform = "&lt;transform-list&gt;" | "none"
 
 This transform attribute specifies the conversion parameters from global coordinate system to user coordinate system of the document. 
 
 ---
 
-## transform
+## Transform
 
 ![globalcoordinatesystem2](./images/matrix_0.jpg)
 
@@ -343,13 +344,13 @@ This transform attribute specifies the conversion parameters from global coordin
 - Ys: Y coordinate of SVG user coordinate system
 - Xg: X coordinate of global coordinate system
 - Yg: Y coordinate of global coordinate system
-- a , b , c , d , e , f: The applicable values of parameters(SVG transform(a,b,c,d,e,f) ) 
+- a , b , c , d , e , f: The applicable values of parameters (SVG transform(a,b,c,d,e,f) ) 
 
 When transform is not declared, use transform(1,0,0,1,0,0) as a default.
 
 ---
 
-## calculate coodinate example
+## Calculate Coordinate Example
 
 	&lt;globalCoordinateSystem
 	  id="gcs"
@@ -400,7 +401,7 @@ When transform is not declared, use transform(1,0,0,1,0,0) as a default.
 
 ---
 
-## result
+## Result
 
 	$ ruby convert_matrix.rb 3555.5555555555557 \
 	0.0 0.0 -3555.5555555555557 -490000.0 \
@@ -410,19 +411,19 @@ When transform is not declared, use transform(1,0,0,1,0,0) as a default.
 
 ---
 
-## Browser behavior
+## Browser Behavior
 
-Any browser behaviors such as drag scrolling and zooming with mouse scroll are not defined in thier spec.
+No browser behavior, such as drag scrolling and zooming with mouse wheel, is defined in this specification.
 
-Browser maybe provide basic behaviors, and other controls such as zoom bar are apply on web page.
+Browsers may provide basic behavior and other controls, such as zoom bars, that appear on a web page.
 
 ---
 
 ## Summary
 
 - Tile Map's basic function is provided by SVG Iframe.
-- Coodinate system is provided by GlobalCoordinateSystem.
-- Broswer behavior is not defined.
+- Coordinate system is provided by GlobalCoordinateSystem.
+- Browser behavior is not defined.
 
 ---
 
@@ -430,7 +431,7 @@ Browser maybe provide basic behaviors, and other controls such as zoom bar are a
 
 ---
 
-Both SVG Tiny 1.2 and Iframe Proporsal implemented on many browsers.
+Both, SVG Tiny 1.2 and Iframe proposal, have been implemented on many browsers.
 
 - Internet Explorer SVG Plugin
 - AJAX
@@ -446,17 +447,17 @@ It's called *svgmaptoolkit*.
 
 Supports Windows Vista (32bit), Windows XP, Windows 2000.
 
-You can get from [SVG MAP Lab](http://blog.svg-map.com/2007/09/svgmaptoolkit.html).
+You can download from [SVG MAP Lab](http://blog.svg-map.com/2007/09/svgmaptoolkit.html).
 
 ---
 
 # AJAX
 
-Animation tag version (SVG Tiny 1.2 SVGTL) avaiable.
+Animation tag version (SVG Tiny 1.2 SVGTL) is available.
 
-Basic functions are implemented by Javascript.
+Basic functions are implemented using Javascript.
 
-It's support many *modern* browsers.
+It supports many *modern* browsers.
 
 You can access from [SVG Map developer information](http://svg2.mbsrv.net/devinfo/).
 
@@ -466,29 +467,29 @@ You can access from [SVG Map developer information](http://svg2.mbsrv.net/devinf
 
 Developed by KDDI partner.
 
-It supports IFrame proposals and GlobalCoordinateSystem.
+It supports the IFrame proposal and GlobalCoordinateSystem.
 
-We don't know current status and where are patches on internet:-(
+We don't know the current status and where the patches are on internet :-(
 
 ---
 
 ## Firefox add-on
 
-Animation tag version (SVG Tiny 1.2 SVGTL) avaiable.
+Animation tag version (SVG Tiny 1.2 SVGTL) available.
 
 It is based on AJAX implementation.
 
-All code available in github([https://github.com/Georepublic/svgmap_addon](https://github.com/Georepublic/svgmap_addon)).
+All code is available on Github: [https://github.com/Georepublic/svgmap_addon](https://github.com/Georepublic/svgmap_addon).
 
 ---
 
 ## Firefox Native
 
-Iframe implementation is difficult in Firefox add-on, because iframe in SVG is not avaliable and can't access DOM tree. Also Firefox OS dosen't support add-on/extension.
+Iframe implementation is difficult in Firefox add-on, because Iframe in SVG is not avaliable and can't access the DOM tree. Also Firefox OS dosen't support add-on/extension.
 
-We try to implementation but currently don't work.
+We tried an implementation, but it currently doesn't work.
 
-All code also available in github([https://github.com/Georepublic/mozilla-central](https://github.com/Georepublic/mozilla-central)).
+All codeis also available on Github: [https://github.com/Georepublic/mozilla-central](https://github.com/Georepublic/mozilla-central).
 
 ---
 
@@ -509,9 +510,9 @@ All code also available in github([https://github.com/Georepublic/mozilla-centra
 
 ---
 
-I will continue to implmentation for Firefox.
+I will continue the native implmentation for Firefox.
 
-I will make a issue in bugzilla.
+I will submit an issue in bugzilla.
 
 ---
 
@@ -523,6 +524,6 @@ Please contact me:
 
 Link:
 
-- This presentation : ([http://smellman.github.io/presentation/svgmap/index.html](http://smellman.github.io/presentation/svgmap/index.html))
-- SVG Map developer information : ([http://svg2.mbsrv.net/devinfo/](http://svg2.mbsrv.net/devinfo/))
+- This presentation: [http://smellman.github.io/presentation/svgmap/index.html](http://smellman.github.io/presentation/svgmap/index.html)
+- SVG Map developer information: ([http://svg2.mbsrv.net/devinfo/](http://svg2.mbsrv.net/devinfo/)
 
