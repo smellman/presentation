@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link href="css/reset.css" rel="stylesheet" />
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' >
+    
+<h1>SVG Map - Tile Map Without Javascript</h1>
+
+<h2>Taro Matsuzawa @smellman</h2>
+
+<h2>Georepublic Japan</h2>
+</div>
+      <div class='step' >
+    
+<h2>Topic</h2>
+
+<ul>
+<li>Introducing myself</li>
+<li>Current Tile Maps</li>
+<li>SVG Map</li>
+<li>Implementation</li>
+<li>Demo</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Introducing myself</h2>
+
+<ul>
+<li>Programmer at Georepublic Japan</li>
+<li>Electro Music Lover :-)</li>
+<li>Also <em>Otaku</em></li>
+</ul>
+
+<p><img src="./images/smellman.jpg" alt="smellman">
+<img src="./images/smellman_2.jpg" alt="smellman2"></p>
+</div>
+      <div class='step' >
+    
+<h2>Community</h2>
+
+<ul>
+<li>Member of Mozilla Community in Japan. Author of two japanese books about Firefox (Firefox 3 Hacks, Firefox Hacks Rebooted)</li>
+<li>Member of Japan Unix Society.</li>
+<li>OpenStreetMap mapper.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Georepublic</h2>
+
+<ul>
+<li><a href="http://pgrouting.org/">pgRouting</a></li>
+<li><a href="http://geofuse.georepublic.net/geofuse/">Geofuse</a> and <a href="http://beta.geothematics.com/">Geothematics</a></li>
+<li>Supports OpenStreetMap and others</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Maptember</h2>
+
+<p>I enjoy Maptember too much!</p>
+
+<p><img src="./images/maptember.jpg" alt="maptember"></p>
+</div>
+      <div class='step' >
+    
+<h2>Notice...</h2>
+
+<p>This presentation describe some <em>proposals</em> to W3C.</p>
+
+<p>Be careful about they are not any <em>standards</em>.</p>
+</div>
+      <div class='step' >
+    
+<h1>Current Tile Maps</h1>
+</div>
+      <div class='step' >
+    
+<h2>Current Tile Maps</h2>
+
+<p>Current Tile Maps on Web are implemented by Javascript.</p>
+
+<ul>
+<li>Google Maps</li>
+<li>leaflet.js</li>
+<li>OpenLayers</li>
+<li>others</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Problem in Javascript</h2>
+
+<p>Implementation with Javascript has some problem.</p>
+
+<ul>
+<li>different between javascript engines</li>
+<li>mobile implementation</li>
+<li>big javascript file</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>javascript engines</h2>
+
+<p>Sometimes programmer fails javascript hell with small different between each engine:-(</p>
+
+<ul>
+<li>OdinMonkey (Firefox)</li>
+<li>v8 (Blink or Google Chrome)</li>
+<li>JavaScriptCore (Webkit or Safari)</li>
+<li>Chakra (Internet Explorer)</li>
+</ul>
+
+<p>Goodbye <em>Opera</em>.</p>
+</div>
+      <div class='step' >
+    
+<h2>mobile implementation</h2>
+
+<p>Mobile devices don&#39;t have powerful CPU.</p>
+</div>
+      <div class='step' >
+    
+<p>I lied.</p>
+
+<p><img src="./images/iphone64bit.jpg" alt="apple"></p>
+</div>
+      <div class='step' >
+    
+<p>But <em>too many</em> mobile devices don&#39;t have powerful CPU.</p>
+
+<p><img src="./images/devices.jpg" alt="firefoxos"></p>
+</div>
+      <div class='step' >
+    
+<p>iOS doesn&#39;t support JIT in application(UIWebView).</p>
+
+<p>Only Mobile Safari supports JIT.</p>
+</div>
+      <div class='step' >
+    
+<h2>Big JS File</h2>
+
+<ul>
+<li>Google Maps&#39;s HTML file(include javascript) &gt; 200kb.</li>
+<li>openlayers.min.js &gt; 300kb. (but openlayers.mobile.js is small)</li>
+<li>leaflet.js &lt; 100kb :-)</li>
+</ul>
+
+<p>It&#39;s nothing compared to loading map data, but sometimes loading big javascript file cause memory leak.</p>
+</div>
+      <div class='step' >
+    
+<p>Tile Maps with Javascript has problems but <em>time is a cure</em> that.</p>
+
+<p>However we can try <em>another approach</em>.</p>
+</div>
+      <div class='step' >
+    
+<h1>SVG Map</h1>
+</div>
+      <div class='step' >
+    
+<p>SVG Map is a technology implementation Tile Map using SVG.</p>
+
+<p>Too many specs are developed by Satoru Takagi in KDDI(famous mobile carrier in Japan).</p>
+</div>
+      <div class='step' >
+    
+<h2>history</h2>
+
+<p>SVG Map has too long history.</p>
+
+<p>KDDI took some parent about basic technology of Tile Map in 1996.</p>
+
+<p>They focused research and development that called &quot;JaMaPS&quot; before upcoming SVG technology.</p>
+
+<p>They started standard activity at W3C SVG WG in 2000.</p>
+</div>
+      <div class='step' >
+    
+<h2>W3C SVG 1.1</h2>
+
+<p>SVG 1.1 includes some result of their acitivity.</p>
+
+<ul>
+<li>Geographic coordinate systems (<a href="http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates">http://www.w3.org/TR/SVG/coords.html#GeographicCoordinates</a>)</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>SVG Tiny 1.2</h2>
+
+<p>They make &quot;Tiling and Layering Module for SVG 1.2 Tiny&quot; spec and posted &quot;W3C Member Submission&quot;.</p>
+
+<ul>
+<li>Tiling and Layering Module for SVG 1.2 Tiny (<a href="http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/">http://www.w3.org/Submission/2011/SUBM-SVGTL-20110607/</a>)</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>SVGTL</h2>
+
+<p>This module use <em>animation</em> tag but it&#39;s not useful.</p>
+
+<p>So they make new proposals now.</p>
+</div>
+      <div class='step' >
+    
+<h2>new proposals</h2>
+
+<p>They separated from Tiling and Layering Module to two proposal and they use <em>iframe</em> tag instead of <em>animation</em> tag.</p>
+
+<ul>
+<li>IFrame Like Syntax(<a href="http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame_Like_Syntax">http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/IFrame_Like_Syntax</a>)</li>
+<li>Global Coordinate System(<a href="http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global_Coordinate_Systems">http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Global_Coordinate_Systems</a>)</li>
+</ul>
+
+<p>Basic concept is largely similar to SVG 1.2 Tiny version.</p>
+</div>
+      <div class='step' >
+    
+<h2>IFrame Like Syntax</h2>
+
+<p>IFrame Like Syntax supports <em>Tiling</em> function and <em>Layering</em> function.</p>
+</div>
+      <div class='step' >
+    
+<h2>Tiling</h2>
+
+<p>Root SVG Document puts tiled SVG Documents with iframe and each SVG Documents also put tiled SVG Documents(cascading documents).</p>
+
+<p><img src="./images/700px-PIFLS_tiling.png" alt="tiling"></p>
+</div>
+      <div class='step' >
+    
+<h2>Layering</h2>
+
+<p>Put layer of SVG document, it is depending to display on viewbox and zooming.</p>
+
+<p><img src="./images/550px-PIFLS_layering.png" alt="layering"></p>
+
+<p>Zooming function using extend CSS3 Media Query defined in this proposal.</p>
+</div>
+      <div class='step' >
+    
+<h2>Tiling and Layering example</h2>
+
+<p>root.svg</p>
+<pre><code class='prettyprint '>&lt;iframe x="0" y="0" width="200" height="200"
+        media="(min-zoom: 0.5) and (max-zoom: 5)"
+        src="L1.svg" /&gt;
+&lt;iframe x="0" y="0" width="200" height="200"
+        media="(min-zoom: 5) and (max-zoom: 15)"
+        src="L2.svg" /&gt;
+</code></pre>
+<p>Zooming function work with extended CSS3 Media Queries.</p>
+
+<p>This example will display either L1.svg or L2.svg via zoom level.</p>
+
+<p>When media is not decleard, this layer will be displayed at all times.</p>
+</div>
+      <div class='step' >
+    
+<p>L1.svg</p>
+<pre><code class='prettyprint '>&lt;iframe x="0" y="0" width="100" height="100"
+        src="L1_01.svg" /&gt;
+&lt;iframe x="100" y="0" width="100" height="100"
+        src="L1_02.svg" /&gt;
+&lt;iframe x="0" y="100" width="100" height="100"
+        src="L1_11.svg" /&gt;
+&lt;iframe x="100" y="100" width="100" height="100"
+        src="L1_12.svg" /&gt;
+</code></pre>
+<p>L1_01.svg</p>
+<pre><code class='prettyprint '>&lt;image xlink:href="L1_01.png" /&gt;
+</code></pre>
+<p>L1.svg contains 4 iframes sorted tiled.</p>
+</div>
+      <div class='step' >
+    
+<p>L2.svg</p>
+<pre><code class='prettyprint '>&lt;iframe x="0" y="0" width="100" height="100"
+        src="L2_01.svg" /&gt;
+&lt;iframe x="100" y="0" width="100" height="100"
+        src="L2_02.svg" /&gt;
+&lt;iframe x="0" y="100" width="100" height="100"
+        src="L2_11.svg" /&gt;
+&lt;iframe x="100" y="100" width="100" height="100"
+        src="L2_12.svg" /&gt;
+</code></pre>
+<p>L2.svg looks like L1.svg.</p>
+</div>
+      <div class='step' >
+    
+<p>L2_01.svg</p>
+<pre><code class='prettyprint '>&lt;iframe x="0" y="0" width="50" height="50"
+        src="L2_01_01.svg" /&gt;
+&lt;iframe x="50" y="0" width="50" height="50"
+        src="L2_01_02.svg" /&gt;
+&lt;iframe x="0" y="50" width="50" height="50"
+        src="L2_01_11.svg" /&gt;
+&lt;iframe x="50" y="50" width="50" height="50"
+        src="L2_01_12.svg" /&gt;
+</code></pre>
+<p>L2_01_01.svg</p>
+<pre><code class='prettyprint '>&lt;image xlink:href="L2_01_01.png" /&gt;
+</code></pre>
+<p>Layer 2 contains 4 times 4 (= 16) SVG Documents.</p>
+</div>
+      <div class='step' >
+    
+<h2>Layer1 figure</h2>
+
+<p><img src="./images/layer1.jpg" alt="layer1"></p>
+</div>
+      <div class='step' >
+    
+<h2>Layer2 figure</h2>
+
+<p><img src="./images/layer2.jpg" alt="layer2"></p>
+</div>
+      <div class='step' >
+    
+<h2>Dynamic Loading</h2>
+
+<p>Browser will dicide loading documents with CSS3 Media Queries and view-port.</p>
+
+<p>Loaded Document will cached in browser.</p>
+
+<p><img src="./images/tile.gif" alt="tile"></p>
+</div>
+      <div class='step' >
+    
+<h2>Global Coordinate System</h2>
+
+<p>SVG provides function to geographic coodinates.</p>
+
+<p>However, we need to simplify a implementation to specific geographic coordinate system.</p>
+</div>
+      <div class='step' >
+    
+<p><em>Global Coordinate System</em> provides a function to share a coodinate system by declearing a common coordinate system between plural documents.</p>
+
+<p><img src="./images/globalcoordinatesystem1.jpg" alt="globalcoordinatesystem"></p>
+<pre><code class='prettyprint '>&lt;?xml version="1.0"?&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;GlobalCoordinateSystem id="gcs"
+  transform="matrix(100,0,0,-100,0,0)"
+  href="http://purl.org/crs/84"/&gt;
+ .....The actual content.....
+&lt;/svg&gt;
+</code></pre></div>
+      <div class='step' >
+    
+<h2>attributes</h2>
+
+<ul>
+<li>href=&quot;<URL for Global Coordinate System>&quot;</li>
+</ul>
+
+<p>This attribute specifies the global coordinates system of the SVG document. That is, this is an identifier for a coordinate system. </p>
+
+<ul>
+<li>transform = &quot;<transform-list>&quot; | &quot;none&quot;</li>
+</ul>
+
+<p>This transform attribute specifies the conversion parameters from global coordinate system to user coordinate system of the document. </p>
+</div>
+      <div class='step' >
+    
+<h2>transform</h2>
+
+<p><img src="./images/matrix_0.jpg" alt="globalcoordinatesystem2"></p>
+
+<ul>
+<li>Xs: X coordinate of SVG user coordinate system</li>
+<li>Ys: Y coordinate of SVG user coordinate system</li>
+<li>Xg: X coordinate of global coordinate system</li>
+<li>Yg: Y coordinate of global coordinate system</li>
+<li>a , b , c , d , e , f: The applicable values of parameters(SVG transform(a,b,c,d,e,f) ) </li>
+</ul>
+
+<p>When transform is not declared, use transform(1,0,0,1,0,0) as a default.</p>
+</div>
+      <div class='step' >
+    
+<h2>calculate coodinate example</h2>
+<pre><code class='prettyprint '>&lt;globalCoordinateSystem
+  id="gcs"
+  href="http://purl.org/crs/84"
+  transform="matrix(3555.5555555555557,0.0,0.0,
+  -3555.5555555555557,-490000.0,130125.82802869406)" /&gt;
+  &lt;g &gt;
+    &lt;image xlink:href="http://ecn.t0.tiles.virtualearth.net/
+    tiles/r133002100000.jpeg?g=849&amp;mkt=ja-JP&amp;shading=hill"
+    preserveAspectRatio="none" x="0" y="0"
+    width="312.5" height="251.002021"/&gt;
+</code></pre></div>
+      <div class='step' >
+    
+<ul>
+<li>a: 3555.5555555555557</li>
+<li>b: 0.0</li>
+<li>c: 0.0</li>
+<li>d: -3555.5555555555557</li>
+<li>e: -490000.0</li>
+<li>f: 130125.82802869406</li>
+<li>Xs: 0</li>
+<li>Ys: 0</li>
+</ul>
+
+<p><img src="./images/matrix_1.jpg" alt="matrix_1"></p>
+</div>
+      <div class='step' >
+    
+<h2>script</h2>
+<pre><code class='prettyprint '>def parse(args)
+  a = args[0]
+  b = args[1]
+  c = args[2]
+  d = args[3]
+  e = args[4]
+  f = args[5]
+  xs = args[6]
+  ys = args[7]
+  ma = Matrix[[a, c],
+              [b, d]]
+  v = Vector[xs - e,
+             ys - f]
+  ret = ma.inv*v
+  p ret
+  p "#{ret[1]},#{ret[0]}"
+end
+</code></pre></div>
+      <div class='step' >
+    
+<h2>result</h2>
+<pre><code class='prettyprint '>$ ruby convert_matrix.rb 3555.5555555555557 \
+0.0 0.0 -3555.5555555555557 -490000.0 \
+130125.82802869406 0 0
+Vector[137.8125, 36.597889133070204]
+"36.597889133070204,137.8125"
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Browser behavior</h2>
+
+<p>Any browser behaviors such as drag scrolling and zooming with mouse scroll are not defined in thier spec.</p>
+
+<p>Browser maybe provide basic behaviors, and other controls such as zoom bar are apply on web page.</p>
+</div>
+      <div class='step' >
+    
+<h2>Summary</h2>
+
+<ul>
+<li>Tile Map&#39;s basic function is provided by SVG Iframe.</li>
+<li>Coodinate system is provided by GlobalCoordinateSystem.</li>
+<li>Broswer behavior is not defined.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Implementation</h1>
+</div>
+      <div class='step' >
+    
+<p>Both SVG Tiny 1.2 and Iframe Proporsal implemented on many browsers.</p>
+
+<ul>
+<li>Internet Explorer SVG Plugin</li>
+<li>AJAX</li>
+<li>Chrominum</li>
+<li>Firefox add-on</li>
+<li>Firefox Native</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Internet Explorer SVG Plugin</h2>
+
+<p>It&#39;s called <em>svgmaptoolkit</em>.</p>
+
+<p>Supports Windows Vista (32bit), Windows XP, Windows 2000.</p>
+
+<p>You can get from <a href="http://blog.svg-map.com/2007/09/svgmaptoolkit.html">SVG MAP Lab</a>.</p>
+</div>
+      <div class='step' >
+    
+<h1>AJAX</h1>
+
+<p>Animation tag version (SVG Tiny 1.2 SVGTL) avaiable.</p>
+
+<p>Basic functions are implemented by Javascript.</p>
+
+<p>It&#39;s support many <em>modern</em> browsers.</p>
+
+<p>You can access from <a href="http://svg2.mbsrv.net/devinfo/">SVG Map developer information</a>.</p>
+</div>
+      <div class='step' >
+    
+<h2>Chrominum version</h2>
+
+<p>Developed by KDDI partner.</p>
+
+<p>It supports IFrame proposals and GlobalCoordinateSystem.</p>
+
+<p>We don&#39;t know current status and where are patches on internet:-(</p>
+</div>
+      <div class='step' >
+    
+<h2>Firefox add-on</h2>
+
+<p>Animation tag version (SVG Tiny 1.2 SVGTL) avaiable.</p>
+
+<p>It is based on AJAX implementation.</p>
+
+<p>All code available in github(<a href="https://github.com/Georepublic/svgmap_addon">https://github.com/Georepublic/svgmap_addon</a>).</p>
+</div>
+      <div class='step' >
+    
+<h2>Firefox Native</h2>
+
+<p>Iframe implementation is difficult in Firefox add-on, because iframe in SVG is not avaliable and can&#39;t access DOM tree. Also Firefox OS dosen&#39;t support add-on/extension.</p>
+
+<p>We try to implementation but currently don&#39;t work.</p>
+
+<p>All code also available in github(<a href="https://github.com/Georepublic/mozilla-central">https://github.com/Georepublic/mozilla-central</a>).</p>
+</div>
+      <div class='step' >
+    
+<p><img src="./images/firefox_1.jpg" alt="firefox1"></p>
+</div>
+      <div class='step' >
+    
+<h1>Demo</h1>
+</div>
+      <div class='step' >
+    
+<ul>
+<li><a href="http://svg2.mbsrv.net/devinfo/devkddi/lvl0/test8b.html">AJAX Version National Park + Bing (http://svg2.mbsrv.net/devinfo/devkddi/lvl0/test8b.html)</a></li>
+<li><a href="http://svg2.mbsrv.net/extmaps/BingMap/ContainerBing.svg">Bing Maps SVG Version (http://svg2.mbsrv.net/extmaps/BingMap/ContainerBing.svg)</a></li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Plan</h1>
+</div>
+      <div class='step' >
+    
+<p>I will continue to implmentation for Firefox.</p>
+
+<p>I will make a issue in bugzilla.</p>
+</div>
+      <div class='step' >
+    
+<h2>Thank you</h2>
+
+<p>Please contact me:</p>
+
+<ul>
+<li>Taro Matsuzawa: <em><a href="mailto:taro@georepublic.co.jp">taro@georepublic.co.jp</a></em></li>
+</ul>
+
+<p>Link:</p>
+
+<ul>
+<li>This presentation : (<a href="http://smellman.github.io/presentation/svgmap/">http://smellman.github.io/presentation/svgmap/</a>)</li>
+<li>SVG Map developer information : (<a href="http://svg2.mbsrv.net/devinfo/">http://svg2.mbsrv.net/devinfo/</a>)</li>
+</ul>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
