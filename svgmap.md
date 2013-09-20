@@ -357,8 +357,8 @@ When transform is not declared, use transform(1,0,0,1,0,0) as a default.
 	  href="http://purl.org/crs/84"
 	  transform="matrix(3555.5555555555557,0.0,0.0,
 	  -3555.5555555555557,-490000.0,130125.82802869406)" /&gt;
-	  &lt;g &gt;
-	    &lt;image xlink:href="http://ecn.t0.tiles.virtualearth.net/
+	 &lt;g &gt;
+	  &lt;image xlink:href="http://ecn.t0.tiles.virtualearth.net/
 	    tiles/r133002100000.jpeg?g=849&amp;mkt=ja-JP&amp;shading=hill"
 	    preserveAspectRatio="none" x="0" y="0"
 	    width="312.5" height="251.002021"/&gt;
@@ -489,7 +489,7 @@ Iframe implementation is difficult in Firefox add-on, because Iframe in SVG is n
 
 We tried an implementation, but it currently doesn't work.
 
-All codeis also available on Github: [https://github.com/Georepublic/mozilla-central](https://github.com/Georepublic/mozilla-central).
+All code is also available on Github: [https://github.com/Georepublic/mozilla-central](https://github.com/Georepublic/mozilla-central).
 
 ---
 
