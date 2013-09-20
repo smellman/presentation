@@ -113,15 +113,15 @@ Only Mobile Safari supports JIT.
 
 ## Big JS File
 
-- Google Maps's HTML file(include javascript) > 200kb.
-- openlayers.min.js > 300kb. (but openlayers.mobile.js is small)
-- leaflet.js < 100kb :-)
+- Google Maps's HTML file (including javascript) > 200kb.
+- Openlayers.min.js > 300kb. (but openlayers.mobile.js is small)
+- Leaflet.js < 100kb :-)
 
-It's nothing compared to loading map data, but sometimes loading big Javascript files cause memory leaks.
+It's nothing compared to loading map data, but sometimes loading big Javascript files causes memory leaks.
 
 ---
 
-Tile Maps with Javascript has problems but *time heals all wounds*.
+Tile Maps with Javascript can cause troubles, but *time heals all wounds*.
 
 However we can try *another approach*.
 
@@ -219,11 +219,11 @@ Root.svg
 	        media="(min-zoom: 5) and (max-zoom: 15)"
 	        src="L2.svg" /&gt;
 
-The zooming function work with extended CSS3 Media Queries.
+The zooming function works with extended CSS3 Media Queries.
 
 This example will display either L1.svg or L2.svg depending on zoom level.
 
-When no media attribute is declared, this layer will be always shown.
+When no media attribute is declared, the layer will be always shown.
 
 ---
 
@@ -294,7 +294,7 @@ Layer 2 contains 4 times 4 (= 16) SVG Documents.
 
 ## Dynamic Loading
 
-The browser will decide, which documents to load with CSS3 Media Queries and view-port.
+The browser decides, which documents to load with CSS3 Media Queries and view-port.
 
 A loaded document will be cached in the browser.
 
@@ -306,7 +306,7 @@ A loaded document will be cached in the browser.
 
 SVG provides support for geographic coordinates.
 
-However, we need to simplify an implementation to a specific geographic coordinate system.
+However, we need to simplify an implementation, using a specific geographic coordinate system.
 
 ---
 
