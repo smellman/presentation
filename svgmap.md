@@ -523,6 +523,6 @@ Please contact me:
 
 Link:
 
-- This presentation : ([http://smellman.github.io/presentation/svgmap/](http://smellman.github.io/presentation/svgmap/))
+- This presentation : ([http://smellman.github.io/presentation/svgmap/index.html](http://smellman.github.io/presentation/svgmap/index.html))
 - SVG Map developer information : ([http://svg2.mbsrv.net/devinfo/](http://svg2.mbsrv.net/devinfo/))
 
