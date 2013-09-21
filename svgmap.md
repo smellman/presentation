@@ -520,7 +520,7 @@ I will submit an issue in bugzilla.
 
 Please contact me:
 
-- Taro Matsuzawa: *taro@georepublic.co.jp*
+- Taro Matsuzawa: *taro@georepublic.co.jp*, [@smellman](https://twitter.com/smellman), [Facebook](https://www.facebook.com/btm.smellman)
 
 Link:
 
