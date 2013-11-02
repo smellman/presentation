@@ -14,6 +14,12 @@
 
 ---
 
+今回のプレゼンテーションは以下から閲覧できます
+
+http://smellman.github.io/presentation/maptember_foss4g2013tokyo/
+
+---
+
 # 自己紹介
 
 ![smellman](../images/smellman.jpg)
@@ -38,7 +44,7 @@
 * たまたま関さんと友達に(破滅界隈繋がり)
 * たまたまデスマーチ
     * たまたまクリスマスイブに転職を決意
-    * 何社か声をかけたらデスマーチがいきすぎてたまたま会えたのが関さんだけだった
+    * 何社か声をかけたらデスマーチがいきすぎてたまたま会えたのが関さんだけだった→Georepublic へ
 * 10年ぶりぐらいにGISエンジニアに
 
 ---
@@ -124,6 +130,16 @@ Birmingham と Nottingham の二つの都市を Mappingham と呼ぶように。
 http://langrich.com/
 
 ※社長が僕の友達です。
+
+---
+
+## オフラインマップ
+
+MapsWithMeを使い倒す
+
+![MapsWithMe](../images/mapswithme.jpg)
+
+http://mapswith.me/en/home
 
 ---
 
