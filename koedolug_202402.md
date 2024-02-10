@@ -38,7 +38,9 @@ paginate: true
 
 - CPU: AMD Ryzen 7 7730U with Radeon Graphics
 - Memory: 8GB + 32GB
+  - 8GBは固定、32GBは増設
 - Storage: Kioxia 2TB SSD
+  - 元のストレージは外して、2TBのSSDを増設
 
 ![bg right 80%](https://i.gyazo.com/thumb/3024/0a56bd82580d5e90b51f44830e567a98-heic.jpg)
 
@@ -46,6 +48,9 @@ paginate: true
 
 # Ubuntu Studio 23.10
 
+- KDE Plasma をベースにしたデスクトップ環境
+- オーディオ、ビデオ、画像、グラフィックスなどのアプリケーションがプリインストールされている
+- カーネルはlowlantencyカーネルが使われている
 - 現在のメイン用途はLinux上での開発
   - 音楽作成どこいった...
   - いちおうRenoiseはインストール済み
@@ -89,3 +94,7 @@ paginate: true
   - amd64なDocker環境が欲しかったので、これは大きい
 - 音楽作成環境はまだまだ
 - アプリケーションのスイッチングがまだ慣れてない
+  - Desktop単位でのスイッチングなのでmacOSのようにアプリケーション単位でのスイッチングができないのが不便
+    - KDE Plasmaは使いやすい
+- Emacsキーバインドが動かない
+  - 地味に辛い
