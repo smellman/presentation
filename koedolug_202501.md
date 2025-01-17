@@ -34,6 +34,7 @@ https://smellman.hatenablog.com/
 
 - 年末に読んだ本
 - 年末の活動とか
+- コントリビューションとか
 - 今後の予定
 
 ---
@@ -154,6 +155,36 @@ https://github.com/smellman/pg-strom-docker-ubuntu
 - とりあえずQt6のビルドと依存関係のビルドシステムとして動く所まではできた
 
 https://github.com/smellman/qgis-with-qt6-mac
+
+---
+
+## コントリビューションとか
+
+- PDALにPR送ってマージされた(ドキュメントの修正)
+- OpenStreetMapを毎日描くようにしている
+- Githubへのコミットも毎日している(案件もしくは個人プロジェクト)
+
+---
+
+## OpenStreetMap
+
+- 2025年から毎日描いてる
+  - 主に建物や道路を描いてる
+
+https://hdyc.neis-one.org/?smellman
+
+![bg right 80%](https://i.gyazo.com/bdcc2439aa995a669301e8fab81f31f7.png)
+
+---
+
+## Github
+
+- 2025年から毎日コミットしている
+  - 会社の仕事と個人プロジェクトがいりまじってる
+
+https://github.com/smellman
+
+![bg right 80%](https://i.gyazo.com/ba7d2f8c05848e928c311c6b06c89de8.png)
 
 ---
 
