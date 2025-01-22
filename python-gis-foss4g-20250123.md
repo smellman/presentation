@@ -144,10 +144,11 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 - 画像データやベクトルデータを分割して格納仕組み
 - 例えば、地図データをズームレベルごとに分割して格納する
-  - Google MapsやOpenStreetMapなど
+  - OpenStreetMapや地理院地図、Google Mapsなど
   - 1つの画像タイルは256px x 256pxが一般的
   - 画像データの場合、JPEGやPNGなどが使われる
   - ベクタデータの場合、MVT(MapBox Vector Tile)などが使われる
+    - Google Maps/Apple Mapsは独自形式
 
 ---
 
@@ -155,7 +156,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 https://maps.gsi.go.jp/development/siyou.html から引用
 
-![bg right 80%](https://maps.gsi.go.jp/help/image/tileNum.png)
+![bg right 100%](https://maps.gsi.go.jp/help/image/tileNum.png)
 
 ---
 
@@ -309,6 +310,8 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 
 - OpenStreetMapのデータを解析して、特定の地域のコミット数を取得する
   - PyOsmiumを使う
+- OpenStreetMapのデータを解析して、街路構造の分析や可視化を行う
+  - [OSMnx](https://osmnx.readthedocs.io/en/stable/)を使う
 
 ---
 
@@ -317,6 +320,9 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 - LiDARデータを変換する
   - PDALを使う
     - Pythonインターフェイスあり
+- 点群を3DTiles 1.0形式(pnts)に変換する
+  - [py3dtiles](https://py3dtiles.org)を使う
+    - 大きな点群にはちょっと向いてないので注意
 
 ---
 
@@ -345,6 +351,8 @@ https://maps.gsi.go.jp/development/siyou.html から引用
   - 毎年日本でもFOSS4G Japanが開催されている
     - その他FOSS4G Tokai/FOSS4G Hokkaidoなどがある
   - Globalイベントは毎年異なる国で開催される
+    - 今年はニュージーランド
+    - 来年もしかすると日本、広島の可能性がある
 
 ---
 
