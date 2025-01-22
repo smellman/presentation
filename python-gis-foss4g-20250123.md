@@ -11,6 +11,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ## Taro Matsuzawa ([@smellman](https://x.com/smellman))
 
+- https://smellman.hatenablog.com/
+- https://github.com/smellman
+
 ### 地球とPython - こんなところにPythonが Vol.1
 
 ---
@@ -35,12 +38,13 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
   - Rust/Java/Swiftもちょっと書ける
 - [Lobsta](https://www.lobsta.jp/)というサービスをやっています
   - Redmine+位置情報プラグインという仕組み
+- 年に一度JICAで講義を担当しています
 
 ---
 
 ## Python歴
 
-- 2000年ごろPython 1.x時代から触っている
+- 2000年ごろから、Python 1.x時代から触っている
   - 2002年: バイト先でユーティリティをPython+Visual Basic 6で書く
   - 2004年: 大学の卒検をPythonで実装
 - しばらくは趣味で使っていた
