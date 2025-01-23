@@ -330,7 +330,7 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 
 - PythonでGIS処理をすると内部的にnumpyが使われる事が多い
   - numpyの高度な機能を使うことで、高速に処理ができる
-  - GDALの場合、numpyの配列を使ってデータを処理することが多
+  - GDALの場合、numpyの配列を使ってデータを処理することが多い
     - gdal_calc.pyなどそのまんまPythonのスクリプトもGDALに付属している
 - その他、一緒にpandasやgeoPandasを使うなど
 - Jupiter Notebookを使うことも多い
@@ -371,6 +371,7 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 
 - QGISはQt5及びGDAL/OGRをベースにしたOSSのGISソフトウェア
   - 本年度中にQt6に移行する予定
+- GPL-2.0 ライセンス
 
 ![bg right 80%](https://i.gyazo.com/dd1fe7a34dedd91672eeed006349d6fb.jpg)
 
@@ -380,6 +381,7 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 
 - PyQt5を使ってGUIを構築
 - 主にGDAL/OGRを使ってデータを読み込み
+  - 他にもGRASS GISやSAGA GISなども使える
 
 ---
 
@@ -391,16 +393,16 @@ https://maps.gsi.go.jp/development/siyou.html から引用
   - macOSはGDALのバージョンが古い
     - そのため、GeoParquetを使う場合は注意が必要
     - [conda-forge](https://anaconda.org/conda-forge/qgis)を使うという手もあるが未検証
+    - macOSの問題は現在PRが出ているのでQt6ベースになると問題が解消される可能性がある
 
 ---
 
 ## QGISプラグイン
 
 - QGISはプラグインを用いて拡張が可能
-  - プラグイン自体もPythonで書かれている
+  - プラグインはPythonで書かれている
     - 基本的にCross Platform
-  - プラグイン自体も自作することが可能
-  - プラグインは公式レポジトリに登録することができる
+  - 作ったプラグインは公式レポジトリに登録することができる
 
 ---
 
@@ -458,3 +460,12 @@ https://maps.gsi.go.jp/development/siyou.html から引用
 ---
 
 ご清聴ありがとうございました
+
+---
+
+## おまけ
+
+- JICAの講義資料
+  - [2024年度の講義資料](https://smellman.github.io/jica_2024/)(英語)
+  - 上記の[スクリプト](https://github.com/smellman/jica_scripts)
+    - ほぼMakefileで書かれている
