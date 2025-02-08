@@ -113,7 +113,7 @@ https://www.docswell.com/s/smellman/K22W6M-2025-01-23-python-gis-foss4g
 
 https://smellman.github.io/opentopomap-maplibre/
 
-−−−
+---
 
 ## コントリビューションとか
 
